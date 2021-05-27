@@ -11,3 +11,103 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.active {
+  background-color: #0091ff;
+  color: rgb(255, 255, 255);  
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #555;  
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #618199;
+}
+.avatar {
+  height: 50px;
+  border-radius: 25px;
+  margin: 10px;
+}
+.avatar2 {
+  height: 250px;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.user {
+  display: block;
+  color: #555;  
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  padding-right: 10px;
+}
+button {
+  background-color: #e7e7e7; 
+  color: black;
+  padding-left: 10px;
+  font-size: 12px;
+  transition-duration: 0.4s;
+  border: 2px solid #d30000;
+  border-radius: 8px;
+}
+button:hover {
+  background-color: #d30000;
+  color: white;
+}
+.authoravatar { grid-area: authoravatar; }
+.cardcontent { grid-area: cardcontent; }
+.card {
+  display: grid;
+  grid-template-areas:
+    'authorname authorname authorname authorname '
+    'authoravatar cardcontent cardcontent cardcontent '
+    'authoravatar cardcontent cardcontent cardcontent ';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 30px;
+  width: 40%;
+  height: min-content;
+  margin:30px
+}
+
+.card > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.pollbtn {
+  background-color: #e7e7e7; 
+  color: black;
+  padding-left: 10px;
+  font-size: 30px;
+  transition-duration: 0.4s;
+  border: 2px solid #1b4419;
+  border-radius: 8px;
+}
+
+.pollbtn:hover {
+  background-color: #1b4419;
+  color: white; 
+}
+
