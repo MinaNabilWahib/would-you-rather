@@ -17,16 +17,17 @@ class Home extends Component {
                     </TabList>
 
                     <TabPanel>
-                        {userQuestionData.unanswered.map(question => (
+                        {userQuestionData.answered.map(question => (
                             <UserCard
                                 key={question.id}
                                 question_id={question.id}
                                 unanswered={false}
                             />
                         ))}
+                        
                     </TabPanel>
                     <TabPanel>
-                        {userQuestionData.answered.map(question => (
+                        {userQuestionData.unanswered.map(question => (
                             <UserCard
                                 key={question.id}
                                 question_id={question.id}

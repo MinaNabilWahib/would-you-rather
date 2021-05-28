@@ -38,24 +38,19 @@ class LoginForm extends Component {
       state = {
         value: ''
       };
-      onChange = (e) => {
+      onChange = (value) => {
         this.setState(() => ({
-            value: e.value,
+            value: value,
           }))
       };
       /*onChange = (e, { value }) => {
         this.setState({ value });
       };*/
-      updateValue = (selectedUser ) => {
-        //console.log(selectedOption)
-        this.setState(() => ({
-          value: selectedUser,
-        }))
-      };
+      
       handleSubmit = e => {
         e.preventDefault();
         const { onLoading, setAuthedUser } = this.props;
-        const authedUser = this.state.value;
+        const authedUser = this.state.value.value;
     
         new Promise((res, rej) => {
           onLoading();
@@ -69,12 +64,13 @@ class LoginForm extends Component {
           key: user.id,
           label: <div><img className="avatar" src= {user.avatarURL} alt={user.name + 'picture'}/> {' '} {user.name}</div>,
           value: user.id,
-          image: { avatar: true, src: user.avatarURL }
+          image: { avatar: true, src: user.avatarURL },
+          name:user.name
         }));
       };
      
       render() {
-        const { value } = this.state;
+        const { value} = this.state;
         return(
 
             <form onSubmit={this.handleSubmit}>
@@ -85,7 +81,7 @@ class LoginForm extends Component {
                         value = {value}
                         options = {this.generateDropdownData()}
                         styles = {customStyles}
-                        onChange ={this.onChange}
+                        onChange ={(event)=>this.onChange(event)}
                         
                     />
                     <input type="submit" value="sign in" />

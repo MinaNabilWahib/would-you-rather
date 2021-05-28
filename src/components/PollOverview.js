@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ export class PollOverview extends Component {
                 <h5 textAlign="left">
                       Would you rather
                 </h5>
-                <p style={{ textAlign: 'center' }}>
+                <p style={{ textalign: 'center' }}>
                       {question.optionOne.text}
                       <br />
                         or...
