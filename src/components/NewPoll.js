@@ -44,6 +44,8 @@ export class NewPoll extends Component {
         if (this.state.validSubmit === true) {
             return <Redirect to="/" />;
           }
+          const disabled = this.state.option1 === '' || this.state.option2 === '';
+
         
         return(
             <div className = 'newquestion'>
@@ -75,7 +77,7 @@ export class NewPoll extends Component {
                     >
                     </input>
                     <br/>
-                    <input className='submitnewques' type="submit" value="submit" />
+                    <input disabled={disabled} className='submitnewques' type="submit" value="Add" />
 
                 </form>
             </div>

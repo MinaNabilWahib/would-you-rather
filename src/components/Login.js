@@ -69,6 +69,7 @@ class LoginForm extends Component {
      
       render() {
         const { value} = this.state;
+        const disabled = value === '' ? true : false;
         return(
 
             <form onSubmit={this.handleSubmit}>
@@ -82,7 +83,7 @@ class LoginForm extends Component {
                         onChange ={(event)=>this.onChange(event)}
                         
                     />
-                    <input type="submit" value="sign in" />
+                    <input disabled={disabled} className= 'loginbtn' type="submit" value="login" />
                 </form>
         )
 

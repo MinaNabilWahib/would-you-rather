@@ -12,10 +12,18 @@ class Home extends Component {
                className='questionstabs'
                >
                     <TabList>
-                    <Tab>Answered Questions</Tab>
                     <Tab>Unanswered Questions</Tab>
+                    <Tab>Answered Questions</Tab>
                     </TabList>
-
+                    <TabPanel>
+                        {userQuestionData.unanswered.map(question => (
+                            <UserCard 
+                                key={question.id}
+                                question_id={question.id}
+                                unanswered={true}
+                            />
+                        ))}
+                    </TabPanel>
                     <TabPanel>
                         {userQuestionData.answered.map(question => (
                             <UserCard
@@ -25,15 +33,6 @@ class Home extends Component {
                             />
                         ))}
                         
-                    </TabPanel>
-                    <TabPanel>
-                        {userQuestionData.unanswered.map(question => (
-                            <UserCard
-                                key={question.id}
-                                question_id={question.id}
-                                unanswered={true}
-                            />
-                        ))}
                     </TabPanel>
                 </Tabs>
             </div>

@@ -7,6 +7,10 @@ import Home from './Home'
 import Login  from './Login'
 import UserCard from './UserCard';
 import NewPoll from './NewPoll';
+import Leaderboard from './Leaderboard';
+import Nomatch from './Nomatch';
+
+
 
 class App extends Component {
   componentDidMount() {
@@ -31,7 +35,11 @@ class App extends Component {
                 <Switch>
                   <Route path='/' exact component={Home} />
                   <Route path="/questions/:question_id" component={UserCard} />
+                  <Route path="/questions/bad_id" component={Nomatch} />
                   <Route path="/add" component={NewPoll} />
+                  <Route path="/leaderboard" component={Leaderboard} />
+                  <Route component={Nomatch} />
+                  
                 </Switch>
               
               </div>

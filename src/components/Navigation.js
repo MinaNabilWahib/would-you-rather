@@ -30,17 +30,20 @@ class Navigation extends Component {
           </NavLink>
           </li>
           <li style={{ float: 'right' }}>
-            <span className='user'>
+            <ul className='userinfo'>
+              <li>
               <img className='avatar'
-              src={users[authedUser].avatarURL}
-              alt={'user avatar'}
-              />
-              {users[authedUser].name}
-           
-            <button>
-                logout
-            </button>
-            </span>
+                      src={users[authedUser].avatarURL}
+                      alt={'user avatar'}
+                      />
+                      {users[authedUser].name} 
+              </li>
+              <li>
+                  <button className='logout' onClick={this.handleLogout}>
+                    logout
+                </button>
+              </li>
+            </ul>
           </li>
 
         </ul>

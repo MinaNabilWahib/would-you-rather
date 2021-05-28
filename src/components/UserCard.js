@@ -4,6 +4,8 @@ import PollQuestion from './PollQuestion';
 import PollResult from './PollResult';
 import PollTeaser from './PollOverview';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
+
 
 const pollTypes = {
     POLL_TEASER: 'POLL_TEASER',
@@ -37,7 +39,10 @@ const pollTypes = {
       };
 
       render(){
-        const { author, question, pollType, unanswered = null } = this.props;
+        const { author, question, pollType, badPath, unanswered = null } = this.props;
+        if (badPath === true) {
+          return <Redirect to="/questions/bad_id" />;
+        }
         return (
             <div>
                 
@@ -66,23 +71,30 @@ function mapStateToProps(
     { users, questions, authedUser },
     { match, question_id }
   ) {
-    let question, pollType;
+    let  author, question, pollType ,badPath = false;;
     if (question_id !== undefined) {
       question = questions[question_id];
+      author = users[question.author];
       pollType = pollTypes.POLL_TEASER;
     } else {
       const { question_id } = match.params;
       question = questions[question_id];
       const user = users[authedUser];
-  
-      pollType = pollTypes.POLL_QUESTION;
-      if (Object.keys(user.answers).includes(question.id)) {
-        pollType = pollTypes.POLL_RESULT;
+
+      if (question === undefined) {
+        badPath = true;
+      } else {
+          author = users[question.author];
+          pollType = pollTypes.POLL_QUESTION;
+          if (Object.keys(user.answers).includes(question.id)) {
+            pollType = pollTypes.POLL_RESULT;
+          }
+        }
+
       }
-    }
-    const author = users[question.author];
-  
+
     return {
+      badPath,
       question,
       author,
       pollType
