@@ -25,7 +25,7 @@ export class PollOverview extends Component {
 
           return (
               <div className='questionoverview'>
-                <h5 textAlign="left">
+                <h5 style={{textalign:'left'}}>
                       Would you rather
                 </h5>
                 <p style={{ textalign: 'center' }}>

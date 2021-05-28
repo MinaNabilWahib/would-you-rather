@@ -20,7 +20,7 @@ export class Leaderboard extends Component {
                         </div>
                         <div className='username'>
                             {user.name}
-                            <div classname='trophy' style = {{color : trophyColor[idx],float : 'right'}}>{idx+1}</div>
+                            <div className='trophy' style = {{color : trophyColor[idx],float : 'right'}}>{idx+1}</div>
                         </div>
                         <div className = 'answeredquestion'>
                             Answered questions {'  :  '} {user.answerCount}
