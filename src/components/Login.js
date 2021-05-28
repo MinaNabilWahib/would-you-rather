@@ -43,9 +43,7 @@ class LoginForm extends Component {
             value: value,
           }))
       };
-      /*onChange = (e, { value }) => {
-        this.setState({ value });
-      };*/
+      
       
       handleSubmit = e => {
         e.preventDefault();

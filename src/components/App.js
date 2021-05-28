@@ -6,6 +6,7 @@ import Navigation from './Navigation'
 import Home from './Home'
 import Login  from './Login'
 import UserCard from './UserCard';
+import NewPoll from './NewPoll';
 
 class App extends Component {
   componentDidMount() {
@@ -30,6 +31,7 @@ class App extends Component {
                 <Switch>
                   <Route path='/' exact component={Home} />
                   <Route path="/questions/:question_id" component={UserCard} />
+                  <Route path="/add" component={NewPoll} />
                 </Switch>
               
               </div>

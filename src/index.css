@@ -111,4 +111,22 @@ button:hover {
   color: white; 
 }
 
+.newquestion{
+  background-color: #2196F3;
+  padding: 30px;
+  width: 40%;
+  height: min-content;
+  margin:30px 
+}
+
+.submitnewques{
+  background-color: #e7e7e7; 
+  color: black;
+  padding-left: 10px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  border: 2px solid #011a50;
+  border-radius: 8px;
+}
+
 
