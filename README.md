@@ -13,6 +13,6 @@ this project is the final project for redux and react
 
 # to install and run 
 
-* install all project dependencies with 'yarn install'
+* install all project dependencies with `yarn install`
 * start the development server with `yarn start`
 
