@@ -8,7 +8,7 @@ import Login  from './Login'
 import UserCard from './UserCard';
 import NewPoll from './NewPoll';
 import Leaderboard from './Leaderboard';
-import Nomatch from './Nomatch';
+import {Nomatch} from './Nomatch';
 
 
 
