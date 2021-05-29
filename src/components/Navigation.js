@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink ,withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
+import PropTypes from 'prop-types';
+
 
 class Navigation extends Component {
+  static propTypes = {
+    history: PropTypes.object.isRequired,
+  };
   handleLogout = e => {
     e.preventDefault();
+    this.props.history.push('/');
     this.props.setAuthedUser(null);
   };
 
@@ -62,7 +68,7 @@ function mapStateToProps({ users, authedUser }) {
   };
 }
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   { setAuthedUser }
-  )(Navigation)
+  )(Navigation))

@@ -29,7 +29,7 @@ class App extends Component {
             />
           ) : (
             <div  >
-
+             
               <Navigation/>
               <div>
                 <Switch>
@@ -39,7 +39,6 @@ class App extends Component {
                   <Route path="/add" component={NewPoll} />
                   <Route path="/leaderboard" component={Leaderboard} />
                   <Route component={Nomatch} />
-                  
                 </Switch>
               
               </div>
